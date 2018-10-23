@@ -8,25 +8,11 @@ var Config = require('./config.json');
             }
             return member.hasPermission(perm);
         }
-        // pour récupérer le lien d'invitation du bot sur son serveur
-        bot.on('ready', async () => {
-            console.log(`Bot is ready! ${bot.user.username}`);
-         
-            // on tente de générer un lien d'inviotation, en cas d'erreur, on l'affiche dans la console.
-            try {
-                let link = await bot.generateInvite(['ADMINISTRATOR']);
-                console.log(link);
-            } catch (e) {
-                console.log(e.stack);
-            }
-        });
-        bot.on('message', async message => {
-            console.log(`Content : ${  message.content}`);
-            if (message.content === prefix + "list") {
 class Bot {
     constructor(){
         this.servers = require('./servers.json');
         this.discordClient = new Discord.Client({sync: true});
+        const bot = new Discord.Client({ disableEveryone: true })
         this.bot.login(process.env.BOT_TOKEN);
     initialize(); {
         this.log("Connected to discord.");
@@ -35,6 +21,22 @@ class Bot {
             this.randomizeRoleColors();
         }, Config.randomize_delay*1000);
     }
+            // pour récupérer le lien d'invitation du bot sur son serveur
+            bot.on('ready', async () => {
+                console.log(`Bot is ready! ${bot.user.username}`);
+             
+                // on tente de générer un lien d'inviotation, en cas d'erreur, on l'affiche dans la console.
+                try {
+                    let link = await bot.generateInvite(['ADMINISTRATOR']);
+                    console.log(link);
+                } catch (e) {
+                    console.log(e.stack);
+                }
+            });
+            bot.on('message', async message => {
+                console.log(`Content : ${  message.content}`);
+                if (message.content === prefix + "list") {
+                }
     
     processMessage(message); {
         if (message.content.startsWith(`Mrainbow`)) {
@@ -90,7 +92,6 @@ class Bot {
     error(message); {
         console.log("\x1b[31mERROR\x1b[37m - \x1b[0m" + message);
     }
-    }
+    });
 }
-            }
-        })
+}
