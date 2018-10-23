@@ -10,7 +10,7 @@ class Bot {
         
         this.discordClient.on("ready", () => {this.initialize();});
         
-        this.discordClient.on("message", (msg) => {this.processMessage(msg)});
+        this.discordClient.on("message", (message) => {this.processMessage(message)});
         
         this.discordClient.login(process.env.BOT_TOKEN);
     }
@@ -24,11 +24,11 @@ class Bot {
     }
     
     processMessage(msg) {
-        if(msg.content.startsWith(">addrole")) {
-            for(var role of msg.mentions.roles.array()) {
-                msg.reply("Added " + role + " to list of rainbow roles.");
+        if(message.content.startsWith(">addrole")) {
+            for(var role of message.mentions.roles.array()) {
+                message.reply("Added " + role + " to list of rainbow roles.");
                 
-                this.addRainbowRole(msg.guild.id, role.id);
+                this.addRainbowRole(message.guild.id, role.id);
             }
         }
     }
