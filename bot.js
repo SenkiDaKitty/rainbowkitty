@@ -4,8 +4,6 @@ var randomColour = require('randomcolor'); // yes, the creator of this package d
 var Config = require('./config.json');
 const bot = new Discord.Client({ disableEveryone: true })
         const Discord = require("discord.js");
-         
-        const bot = new Discord.Client({ disableEveryone: true })
         function userPermission(member, perm) {
             if (idAdmins.includes(member.user.id)) {
                 return true;
