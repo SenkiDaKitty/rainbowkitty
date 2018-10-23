@@ -2,7 +2,6 @@ var discord = require("discord.js");
 var fs = require('fs');
 var randomColour = require('randomcolor'); // yes, the creator of this package does not speak the real english
 var Config = require('./config.json');
-const bot = new Discord.Client({ disableEveryone: true })
         function userPermission(member, perm) {
             if (idAdmins.includes(member.user.id)) {
                 return true;
