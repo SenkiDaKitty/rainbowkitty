@@ -1,4 +1,4 @@
-var discord = require("discord.js");
+var Discord = require("discord.js");
 var fs = require('fs');
 var randomColour = require('randomcolor'); // yes, the creator of this package does not speak the real english
 var Config = require('./config.json');
@@ -23,11 +23,10 @@ var Config = require('./config.json');
         bot.on('message', async message => {
             console.log(`Content : ${  message.content}`);
             if (message.content === prefix + "list") {
-                var ServerListEmbed = new Discord.RichEmbed()
 class Bot {
     constructor(){
         this.servers = require('./servers.json');
-        this.discordClient = new discord.Client({sync: true});
+        this.discordClient = new Discord.Client({sync: true});
         this.bot.login(process.env.BOT_TOKEN);
     initialize(); {
         this.log("Connected to discord.");
