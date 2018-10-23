@@ -1,5 +1,5 @@
 {
-  "name": "rainbowbot",
+  "name": "KittyRainbowBot",
   "version": "1.0.0",
   "description": "Randomly changes peoples discord role color.",
   "main": "bot.js",
@@ -12,7 +12,7 @@
     "discord",
     "role"
   ],
-  "author": "Ashleigh Carr",
+  "author": "SenkiDaKitty",
   "license": "MIT",
   "dependencies": {
     "discord.js": "^11.3.2",
