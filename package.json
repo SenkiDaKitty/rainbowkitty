@@ -2,7 +2,7 @@
   "name": "KittyRainbowBot",
   "version": "1.0.0",
   "description": "Randomly changes peoples discord role color.",
-  "main": "bot.js",
+  "main": "rainbow.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
